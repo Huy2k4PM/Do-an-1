@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Font Awesome Icon Library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>Star Rating</h2>
+<span class="fa fa-star unchecked" onclick="rateStar(1)"></span>
+<span class="fa fa-star unchecked" onclick="rateStar(2)"></span>
+<span class="fa fa-star unchecked" onclick="rateStar(3)"></span>
+<span class="fa fa-star unchecked" onclick="rateStar(4)"></span>
+<span class="fa fa-star unchecked" onclick="rateStar(5)"></span>
+
+<script>
+function rateStar(starCount) {
+    // Lặp qua tất cả các ngôi sao
+    for (var i = 1; i <= 5; i++) {
+        var star = document.getElementById("star" + i);
+        // Nếu ngôi sao hiện tại có index nhỏ hơn hoặc bằng starCount, đặt màu orange (checked); ngược lại, đặt màu đen (unchecked)
+        if (i <= starCount) {
+            star.classList.remove("unchecked");
+            star.classList.add("checked");
+        } else {
+            star.classList.remove("checked");
+            star.classList.add("unchecked");
+        }
+    }
+}
+</script>
+
+</body>
+</html>

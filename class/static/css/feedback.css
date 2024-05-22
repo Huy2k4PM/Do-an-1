@@ -1,0 +1,26 @@
+
+
+.feedback-form {
+    width: 100%; /* Điều chỉnh độ rộng của biểu mẫu */
+}
+
+.form-group {
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.form-group label {
+    display: none;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+

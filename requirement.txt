@@ -1,0 +1,10 @@
+asgiref ==3.8.1 
+django == 5.0.6 
+sqlparse == 0.5.0 
+tzdata == 2024.1
+pillow == 10.3.0
+mysqlclient == 2.2.4
+pymysql == 1.1.0
+cffi ==1.16.0 
+cryptography==42.0.7 
+pycparser==2.22

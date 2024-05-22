@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bottom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shopping_cart.css' %}">
+    <title>Group5 Shop</title>
+    
+</head>
+<body>
+  <header style="position: relative;">
+    <div class="w3-top" class="header" id="home">
+      <div class="w3-bar w3-card w3-left-align w3-large heeder-large-screen" style="background-color: #000015;">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-black w3-large" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="{% url 'product_list' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Group5 Shop</a>
+        <div>
+          <a href="{% url 'product_list' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Trang Chủ</a>
+          <a href="#games" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Product</a>
+          <a href="#shop" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Sản phẩm</a>
+          <a href="{% url 'get_user_cart' %}" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-black">Giỏ hàng</a>
+        </div>
+        <div class="profile-section w3-right">
+          {% if user.is_authenticated %}
+            <span class="w3-bar-item w3-padding-large w3-hover-black">
+              <i class="fa fa-user"></i> {{ user.username }}
+            </span>
+            <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Logout</a>
+          {% else %}
+            <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="{% url 'product_list' %}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Trang Chủ</a>
+      <a href="#games" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Product</a>
+      <a href="#shop" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Sản phẩm</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Hỗ trợ</a>
+      <div class="profile-section w3-right">
+        {% if user.is_authenticated %}
+          <span class="w3-bar-item w3-padding-large w3-hover-black">
+            <i class="fa fa-user"></i> {{ user.username }}
+          </span>
+          <a href="{% url 'logout' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Logout</a>
+        {% else %}
+          <a href="{% url 'login' %}" class="w3-bar-item w3-button w3-padding-large w3-hover-black">Login</a>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <h2 style="text-align:center">Product Card</h2>
+
+  <div class="card">
+    <img src="/w3images/jeans3.jpg" alt="Denim Jeans" style="width:100%">
+    <h1>Tailored Jeans</h1>
+    <p class="price">$19.99</p>
+    <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
+    <p><button>Add to Cart</button></p>
+  </div>
+</body>
+</html>
